@@ -45,8 +45,13 @@ NORMAL_Z = (-1.6448536269514722, -0.6744897501960817, 0.0,
             0.6744897501960817, 1.6448536269514722)
 HOURS = list(range(2, 25))
 
-# Similarity kernel widths (in log units) and match bonuses.
-LOG_COUNT_WIDTH = 1.0
+# Similarity kernel widths (in log units) and match bonuses.  The count
+# width 0.8 is the tighter of the values tried in leave-one-out testing
+# over the kit's comparable launches (0.8 beat 1.0 and 2.0 there, both
+# overall and on the console-only, rolling-unlock launches most like
+# this game); a launch's hour-1 size is the strongest single signal of
+# which shape it will follow.
+LOG_COUNT_WIDTH = 0.8
 LOG_PREPEAK_WIDTH = 1.0
 CONSOLE_MATCH = 1.6
 CONSOLE_MISMATCH = 0.625
